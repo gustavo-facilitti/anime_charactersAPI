@@ -61,6 +61,21 @@ app.post("/new-character", async (req, res) => {
   }
 });
 
+//UPDATE CHARACTER
+app.put("/characters/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { power } = req.body;
+    const updateCharacter = await db.query(
+      "UPDATE characters SET power = $1 WHERE id = $2",
+      [power, id] //$1 and $2 are placeholders
+    );
+    res.json({ msg: "character was updated" });
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
 //DELETE REQUEST
 app.delete("/characters/:id", async (req, res) => {
   const id = req.params.id;
