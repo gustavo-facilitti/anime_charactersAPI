@@ -33,7 +33,7 @@ app.get("/search", async (req, res) => {
     );
 
     if (result.rowCount === 0) {
-      return res.json({ data: "no matches found..." });
+      return res.json({ data: "No matches found..." });
     }
 
     // Send the query results back to the client
@@ -61,7 +61,7 @@ app.post("/new-character", async (req, res) => {
   }
 });
 
-//UPDATE CHARACTER
+//UPDATE CHARACTER POWER
 app.put("/characters/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -85,7 +85,6 @@ app.delete("/characters/:id", async (req, res) => {
       id,
     ]);
 
-    console.log(idExists);
 
     if (idExists.rowCount === 0) {
       console.log("not found");
@@ -100,8 +99,8 @@ app.delete("/characters/:id", async (req, res) => {
   }
 });
 
-const PORT = 3000;
+const PORT = 5000;
 
-app.listen(PORT | 3000, () => {
+app.listen(PORT | 5000, () => {
   console.log(`Listening on port ${PORT}`);
 });
