@@ -85,7 +85,6 @@ app.delete("/characters/:id", async (req, res) => {
       id,
     ]);
 
-
     if (idExists.rowCount === 0) {
       console.log("not found");
       return res.status(404).send({ data: "No Success" });
