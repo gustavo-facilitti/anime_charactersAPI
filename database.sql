@@ -1,0 +1,8 @@
+CREATE TABLE characters (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    power VARCHAR(20) NOT NULL,
+    race VARCHAR(20) NOT NULL,
+    age INTEGER,
+    isAdult BOOLEAN DEFAULT TRUE
+);
